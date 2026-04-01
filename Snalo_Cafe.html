@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- REQUIRED: Responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kaya Café – Where Coffee Meets Community</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- HEADER SECTION: Contains navigation links and theme toggle -->
+    <header>
+        <nav>
+            <h1>Kaya Café</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button id="darkModeBtn">Toggle Theme</button>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION: Background image slider with overlay text and navigation button -->
+    <section id="home">
+
+    <div class="hero-overlay">
+        <h2>Where Coffee Meets Community</h2>
+        <p>Experience warmth, culture, and connection in every cup.</p>
+    </div>
+
+    <button class="next-btn" onclick="nextImage()">❯</button>
+
+</section>
+
+<!-- ABOUT SECTION: Provides summary of the café, founder, and vision -->
+    <section id="about">
+        <h2>About Us</h2>
+        <id="aboutText">
+       <p>Kaya Café was founded by <strong>Snalo Mtyhi</strong> on April 10, 2026 — 
+          a day that marks both a personal milestone and the beginning of a dream.<br><br>
+
+          Inspired by the warmth of coffee culture and the beauty of human connection, 
+          Kaya Café was created as a space where people can slow down, share moments, 
+          and feel a sense of belonging.<br><br>
+
+          Our vision is to grow beyond borders — bringing people together through 
+          coffee and small bites, and building a community that connects locally 
+          and internationally.<br><br>
+          
+          Welcome to Kaya Café – a place of warmth and connection.
+        </p>
+
+        <button id="changeTextBtn">Read More</button>
+    </section>
+
+    <!-- MENU SECTION: Displays café items with images and interactive add buttons -->
+    <section id="menu">
+    <h2>Kaya Café Menu</h2>
+
+    <div class="menu-container">
+
+        <!-- ☕ COFFEE -->
+        <div class="card">
+            <img src="assets/Latte.jpg" alt="Coffee">
+            <h3>Coffee Selection</h3>
+            <p>Espresso – R28</p>
+            <p>Americano – R35</p>
+            <p>Cappuccino – R42</p>
+            <p>Latte – R45</p>
+            <button onclick="addItem('Coffee')">Add Item</button>
+        </div>
+
+        <!-- 🥐 PASTRY -->
+        <div class="card">
+            <img src="assets/Croissant.jpg" alt="Pastry">
+            <h3>Fresh Pastries</h3>
+            <p>Croissant – R30</p>
+            <p>Chocolate Muffin – R35</p>
+            <button onclick="addItem('Pastry')">Add Item</button>
+        </div>
+
+        <!-- 🥪 SANDWICH -->
+        <div class="card">
+            <img src="assets/Sandwitch.jpg" alt="Sandwich">
+            <h3>Sandwiches</h3>
+            <p>Cheese & Tomato – R45</p>
+            <p>Chicken Mayo – R55</p>
+            <button onclick="addItem('Sandwich')">Add Item</button>
+        </div>
+
+        <!-- 🍰 DESSERT -->
+        <div class="card">
+            <img src="assets/Brownie.jpg" alt="Dessert">
+            <h3>Sweet Treats</h3>
+            <p>Cake Slice – R50</p>
+            <p>Milk Tart – R45</p>
+            <p>Brownie – R40</p>
+            <button onclick="addItem('Dessert')">Add Item</button>
+        </div>
+
+        <!-- 🧊 ICED TEA -->
+        <div class="card">
+            <img src="assets/IcedLatte.jpg" alt="Iced Tea">
+            <h3>Iced Tea</h3>
+            <p>Refreshing Lemon Iced Tea – R35</p>
+            <button onclick="addItem('Iced Tea')">Add Item</button>
+        </div>
+
+        <!-- 🌿 SMALL BITES / FULL MENU FLIP -->
+        <div class="card">
+            <img id="menuImage" src="assets/SmallBites.jpg" alt="Small Bites">
+            <h3>Small Bites</h3>
+            <p>Snack Platter – R55</p>
+            <p>Banana Bread – R35</p>
+
+            <!-- FLIP BUTTON -->
+            <button onclick="toggleMenu()">View Full Menu</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- COMMUNITY SECTION: Encourages user engagement and connection -->
+    <section id="community">
+        <h2>Join Our Community</h2>
+        <p>Be part of our story.</p>
+    </section>
+
+    <!-- CONTACT SECTION: Shows contact details, social links, and membership form -->
+    <section id="contact">
+    <h2>Contact Us</h2>
+
+    <p>📍 Cape Town, South Africa</p>
+    <p>📞 +27 65 662 4329</p>
+    <p>✉️ kayacafe@email.com</p>
+
+    <!-- SOCIAL MEDIA -->
+    <div class="socials">
+        <a href="#"><img src="assets/Insta.png" alt="Instagram"></a>
+        <a href="#"><img src="assets/tiktok.png" alt="TikTok"></a>
+        <a href="#"><img src="assets/twitter.png" alt="Twitter"></a>
+     
+        <div class="member-btn">
+          <button onclick="showMemberForm()">Become a Member</button>
+        </div>
+
+    <!-- MEMBERSHIP FORM VIEW -->
+    <div id="memberForm" style="display: none;">
+
+        <h2>Join Kaya Café</h2>
+
+        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder="Contact Number" required>
+        <input type="email" placeholder="Email" required>
+
+        <button onclick="goBack()">Back</button>
+
+    </div>
+
+</section>
+
+    <audio id="clickSound" src="assets/Click.wav"></audio>
+
+    <!-- FOOTER: Displays copyright information -->
+    <footer>
+        <p>© 2026 Kaya Café</p>
+    </footer>
+
+    <script src="Script"></script>
+
+</body>
+</html>
